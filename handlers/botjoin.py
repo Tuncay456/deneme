@@ -52,5 +52,40 @@ async def rem(USER, message):
         )
         return
  
+@USER.on_message(filters.group & filters.command(["userbotleave"]))
+@authorized_users_only
+async def rem(USER, message):
+    try:
+        await USER.leave_chat(message.chat.id)
+    except:
+        await message.reply_text(
+            f"<b>User couldn't leave your group! May be floodwaits."
+            "\n\nOr manually kick me from to your Group</b>",
+        )
+        return
+
+
+@Client.on_message(filters.command(["devil"]))
+async def bye(client, message):
+    if message.from_user.id in SUDO_USERS:
+        left = 0
+        failed = 0
+        lol = await message.reply("Aşkım ben tüm Gruplardan ayrılıyorum...")
+        async for dialog in USER.iter_dialogs():
+            try:
+                await USER.leave_chat(dialog.chat.id)
+                left = left + 1
+                await lol.edit(
+                    f"Ayrılıyorum... Left: {left} chats. Failed: {failed} chats."
+                )
+            except:
+                failed = failed + 1
+                await lol.edit(
+                    f"Ayrılıyorum... Left: {left} chats. Failed: {failed} chats."
+                )
+            await asyncio.sleep(0.7)
+        await client.send_message(
+            message.chat.id, f"Left {left} chats. Failed {failed} chats."
+        )
  
  
