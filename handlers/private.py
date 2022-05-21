@@ -1,40 +1,31 @@
-from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram import Client
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-from config import BOT_USERNAME, BOT_NAME as bot
-from helpers.filters import command, other_filters2
-# Maho tarafından düzenlendi. 
+from config import BOT_NAME as bn
+from helpers.filters import other_filters2
 
-@Client.on_message(command(["start", f"start@{BOT_USERNAME}"]))
+
+@Client.on_message(other_filters2)
 async def start(_, message: Message):
-                await message.reply_sticker( 
-                "CAACAgIAAx0CUPE31gACHUZiiPmt4YAJ5GqvyJNZeDthLoZlVQACswsAAipQUUoso7YJ7GnT1h4E",
-                caption=(f"""**Merhaba {message.from_user.mention}  👍\nBen {bot}!\nTelegram Grupları İçin Özel Hazırlandım.n\Sahibim ile iletişime geçiniz.**"""),
-         reply_markup=InlineKeyboardMarkup(
+    await message.reply_sticker("CAACAgIAAx0CUPE31gACHUZiiPmt4YAJ5GqvyJNZeDthLoZlVQACswsAAipQUUoso7YJ7GnT1h4E")
+    await message.reply_text(
+        f"""Ben **{bn}** !!
+Reklam atmak için tasarlandım. Şuanda amatör bir yazılım olabilirim, olsun Sahime mesaj atabilirsiniz. Bilgi 
+        """,
+        reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "➕ ❰ Grubuna Ekle ❱ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "🚀 Reklam", url="https://t.me/Taliamusicasistant"
+                        "💖 Asistan", url="https://t.me/movingmusic"
+
                     ),
                     InlineKeyboardButton(
-                        "📣 Kanalım", url="https://t.me/Sohbetdestek"
-                    )
-                ],
-                [
+                        "📣 Kanal", url="https://t.me/sohbetdestek"
+                    ),                    
                     InlineKeyboardButton(
-                        "🙄 Yardım", url="https://t.me/Botdestekgrubu" 
-                    ),
-                    InlineKeyboardButton(
-                        "Repo 🇹🇷", url=f"https://t.me/Mahoaga"
-                    )
+                        "🌀 Repo", url="https://github.com/Mehmetbaba06" 
+                    ), 
                 ]
-                
-           ]
-        ),
+            ]
+        )
     )
- 
