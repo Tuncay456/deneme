@@ -10,20 +10,19 @@ async def start(_, message: Message):
     await message.reply_sticker("CAACAgIAAx0CUPE31gACHUZiiPmt4YAJ5GqvyJNZeDthLoZlVQACswsAAipQUUoso7YJ7GnT1h4E")
     await message.reply_text(
         f"""Ben **{bn}** !!
-Reklam atmak için tasarlandım. Şuanda amatör bir yazılım olabilirim, olsun Sahime mesaj atabilirsiniz. Bilgi 
-        """,
+Reklam atmak için tasarlandım. Şuanda amatör bir yazılım olabilirim, olsun Sahime mesaj atabilirsiniz. [İletişim](https://t.me/Mahoaga) """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "💖 Asistan", url="https://t.me/movingmusic"
+                        "💖 Sohbet Yardım", url="https://t.me/Botdestekgrubu"
 
                     ),
                     InlineKeyboardButton(
                         "📣 Kanal", url="https://t.me/sohbetdestek"
                     ),                    
                     InlineKeyboardButton(
-                        "🌀 Repo", url="https://github.com/Mehmetbaba06" 
+                        "🌀 Repo", url="https://github.com/Mehmetbaba55" 
                     ), 
                 ]
             ]
