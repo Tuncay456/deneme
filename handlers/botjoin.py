@@ -20,7 +20,7 @@ async def addchannel(client, message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "Sesmusic Asistan"
+        user.first_name =  "Reklamcı"
 
     try:
         await USER.join_chat(invitelink)
@@ -38,7 +38,7 @@ async def addchannel(client, message):
         )
         return
     await message.reply_text(
-            "<b>Asistan Zaten Grupta Var</b>",
+            "<b>Reklamcı Zaten Grupta Var</b>",
         )
     
 @USER.on_message(filters.group & filters.command(["ayril", "asistanby"]))
