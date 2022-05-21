@@ -1,5 +1,6 @@
 pyrogram==1.4.9
 TgCrypto
+py-tgcalls
 python-dotenv
 requests
 aiohttp
