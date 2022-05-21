@@ -4,6 +4,7 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserAlreadyParticipant
 from helpers.decorators import errors, authorized_users_only
 from config import SUDO_USERS 
+import asyncio
 
 @Client.on_message(filters.group & filters.command(["katil", "asistan"]))
 @authorized_users_only
