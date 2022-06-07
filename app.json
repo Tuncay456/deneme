@@ -2,7 +2,7 @@
   "name": "Maho",
   "description": "Telegram Reklam İşbirliği.",
   "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/Mehmetbaba55/EfsaneMusic",
+  "repository": "https://github.com/Tuncay456/deneme",
   "stack": "container",
   "env": {
     "SESSION_NAME": {
